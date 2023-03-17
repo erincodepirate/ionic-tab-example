@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
-import { Router } from '@angular/router';
+import { NavigationExtras, Router } from '@angular/router';
+import { IonItem, NavController } from '@ionic/angular';
 
 @Component({
   selector: 'app-tab1',
@@ -9,10 +10,17 @@ import { Router } from '@angular/router';
 export class Tab1Page {
   id = 1;
 
-  constructor(private router: Router) {}
+  constructor(private router: Router, public navCtrl: NavController) {}
 
   redirect() {
-    this.router.navigate(["/", "tabs", "items", this.id]);
+    //this.router.navigate(["/", "tabs", "items", this.id]);
+    const data = {name: 'abc', id: this.id};
+    const navData: NavigationExtras = {
+      queryParams: {
+        data: JSON.stringify(data)
+      }
+    }
+    this.navCtrl.navigateForward('/tabs/items/' + this.id, navData);
   }
 
 }

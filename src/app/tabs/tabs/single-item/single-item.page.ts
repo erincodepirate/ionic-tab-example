@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { NavController } from '@ionic/angular';
 
 @Component({
   selector: 'app-single-item',
@@ -8,7 +9,7 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class SingleItemPage implements OnInit {
   id: any;
-  constructor(private route: ActivatedRoute) { }
+  constructor(private route: ActivatedRoute, public navCtrl: NavController) { }
 
   ngOnInit() {
     this.id = this.route.snapshot.paramMap.get('id');
