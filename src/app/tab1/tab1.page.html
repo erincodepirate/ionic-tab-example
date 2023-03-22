@@ -14,5 +14,6 @@
   </ion-header>
 
   <app-explore-container name="Tab 1 page"></app-explore-container>
-  <a (click)="redirect()" >Redirect to single item page</a>
+  <p><a (click)="redirect()">Redirect to single item page</a></p>
+  <p><a [routerLink]="['item']">Go to item page</a></p>
 </ion-content>

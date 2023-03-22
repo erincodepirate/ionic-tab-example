@@ -1,0 +1,22 @@
+import { NgModule } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms';
+
+import { IonicModule } from '@ionic/angular';
+
+import { ItemPageRoutingModule } from './item-routing.module';
+
+import { ItemPage } from './item.page';
+import { ApiService } from 'src/app/services/api/api.service';
+
+@NgModule({
+  imports: [
+    CommonModule,
+    FormsModule,
+    IonicModule,
+    ItemPageRoutingModule
+  ],
+  declarations: [ItemPage],
+  providers: [ApiService]
+})
+export class ItemPageModule { }
