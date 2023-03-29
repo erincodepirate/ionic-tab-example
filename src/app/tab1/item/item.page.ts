@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Item } from 'src/app/interfaces';
 import { ApiService } from 'src/app/services/api/api.service';
 
 @Component({
@@ -7,7 +8,7 @@ import { ApiService } from 'src/app/services/api/api.service';
   styleUrls: ['./item.page.scss'],
 })
 export class ItemPage implements OnInit {
-  items: { id: number; name: string; description: string; price: number; }[] = [];
+  items: Item[] = [];
 
   constructor(public apiService: ApiService) { }
 

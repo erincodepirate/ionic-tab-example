@@ -1,10 +1,11 @@
 import { Injectable } from '@angular/core';
+import { Item } from '../../interfaces';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ApiService {
-  items: { id: number; name: string; description: string; price: number; }[] = [];
+  items: Item[] = [];
 
 
 
