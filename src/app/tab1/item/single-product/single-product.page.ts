@@ -12,11 +12,14 @@ export class SingleProductPage implements OnInit {
 
   item: Item | undefined;
 
-  constructor(private route: ActivatedRoute, public apiService: ApiService) { }
+  constructor(private route: ActivatedRoute, public apiService: ApiService) {
+    console.log("constructor", this.item);
+  }
 
   ngOnInit() {
     const id = this.route.snapshot.paramMap.get('id');
     this.item = this.apiService.getItem(Number(id));
+    console.log("ngOnInit", this.item);
   }
 
 }
