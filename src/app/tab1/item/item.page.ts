@@ -37,6 +37,15 @@ export class ItemPage implements OnInit {
       if (val) {
         this.items = data;
       }
+
+      const object1 = {...this.items[0], p_code: 12, price: 15};
+      console.log("obj1:", object1);
+
+      //const array1 = [...this.items];
+      const array1 = [1,2,3,4];
+      const array2 = [1,3,7,8];
+      const array3 = [...array1, ...array2, 0, 9]
+      console.log("arr3:", array3)
     } catch (e) {
       console.log(e);
     }
